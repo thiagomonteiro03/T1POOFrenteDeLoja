@@ -25,6 +25,7 @@ public class HistoricoVendas {
 
         for(int i=vendas.size();i>=n;i--){
             lista.add(vendas.get(i));
+
         }
 
         return lista;

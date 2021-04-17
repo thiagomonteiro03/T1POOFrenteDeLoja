@@ -30,5 +30,6 @@ public class App {
         System.out.println("Estoque - Quantidade disponível: " + estoque.getQuantidadeDisponivel(100));
         System.out.println("Estoque - Pegando produto android: " + estoque.getProduto(99));
         System.out.println();
+
     }
 }

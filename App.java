@@ -37,9 +37,11 @@ public class App {
 
         //Validação de Venda
         System.out.println("-----------------------------------------");
-        Venda vaidacerto = new Venda();
-        System.out.println("item inserido: " + vaidacerto.insereItem(99, 8,estoque));
-        System.out.println("item inserido: " + vaidacerto.insereItem(99, 1,estoque));
+        Venda venda = new Venda();
+        System.out.println("item inserido: " + venda.insereItem(99, 8,estoque));
+        System.out.println("item inserido: " + venda.insereItem(99, 1,estoque));
+        System.out.println("item removido: " + venda.removeItem(1));
+        System.out.println("item removido errado: " + venda.removeItem(100));
         System.out.println();
 
 

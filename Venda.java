@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Venda {
     
     private ArrayList<ItemVenda> itens;
-    private int numero;
+    private int numero = 0;
     private final double IMPOSTO = 0.25;
 
     public Venda() {
@@ -32,8 +32,11 @@ public class Venda {
     }
 
     public boolean removeItem(int numero){
-        itens.get(0).
+        if(numero<itens.size()){
+        itens.remove(numero);
         return true;
+        }
+        return false;
     }
 
     public boolean conclui(){

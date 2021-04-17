@@ -53,4 +53,15 @@ public class Estoque {
         return item.reposicaoEstoque(quantidade);
     }
 
+    public Produto getProduto(int codigo) {
+        for (int i = 0; i < itens.size(); i++) 
+        {
+            Produto item = itens.get(i).getProduto();
+
+            if (item.getCodigo() == codigo)
+                return item;
+        }
+        return null;
+    }
+
 }

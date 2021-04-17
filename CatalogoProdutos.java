@@ -3,24 +3,34 @@ import java.util.ArrayList;
 public class CatalogoProdutos {
 
     private ArrayList<Produto> produtos;
+
+    public CatalogoProdutos() 
+    {
+        produtos = new ArrayList<Produto>();
+    }
     
-    public boolean cadastraProduto(Produto produto){
-        if(produtos.contains(produto)){
-            System.out.println("Seu produto ja foi cadastrado.");
+    public boolean cadastraProduto(Produto p){
+        if (p == null)
             return false;
-        }
-        else produtos.add(produto);
+
+        produtos.add(p);
         return true;
     }
 
-    public Produto getProduto(int codigo){
-        Produto produto = null;
-        for(int i = 0; i<produtos.size();i++){
-            if(produtos.get(i).getCodigo()==codigo) 
-            produto = produtos.get(i);
-        }
+    public Produto getProduto(int codigo) {
+        for (int i = 0; i < produtos.size(); i++) 
+        {
+            Produto item = produtos.get(i);
 
-        return produto;
+            if (item.getCodigo() == codigo)
+                return item;
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "CatalogoProdutos [produtos=" + produtos + "]";
     }
 
     public ArrayList<Produto> getProdutosLista() {

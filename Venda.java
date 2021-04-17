@@ -19,7 +19,7 @@ public class Venda {
         ItemVenda item = new ItemVenda(p, p.getPrecoUnitario(), quantidade);
         itens.add(item);
         estoque.baixaEstoque(codigo, quantidade);
-        
+
         return true;
 
         }
@@ -32,6 +32,7 @@ public class Venda {
     }
 
     public boolean removeItem(int numero){
+        itens.get(0).
         return true;
     }
 

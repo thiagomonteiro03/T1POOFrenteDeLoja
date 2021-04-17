@@ -10,5 +10,6 @@ public class App {
         System.out.println("Quantidade disponível: " + estoque.getQuantidadeDisponivel(100));
         estoque.reposicaoEstoque(100, 1);
         System.out.println("Quantidade disponível: " + estoque.getQuantidadeDisponivel(100));
+        
     }
 }

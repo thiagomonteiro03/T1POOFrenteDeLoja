@@ -4,12 +4,26 @@ public class Venda {
     
     private ArrayList<ItemVenda> itens;
     private int numero;
-    private double imposto = 0.25;
+    private final double IMPOSTO = 0.25;
+
+    public Venda() {
+        itens = new ArrayList<ItemVenda>();
+    }
 
 
-    public boolean insereItem(int codigo, int quantidade){
+    public boolean insereItem(int codigo, int quantidade, Estoque estoque){
+
+        Produto p = estoque.getProduto(codigo);
+        if(estoque.getQuantidadeDisponivel(codigo)>=quantidade){
+
+        ItemVenda item = new ItemVenda(p, p.getPrecoUnitario(), quantidade);
+        itens.add(item);
+        estoque.baixaEstoque(codigo, quantidade);
         
         return true;
+
+        }
+        return false;
     }
 
     public void imprimeRecibo(){
@@ -27,7 +41,7 @@ public class Venda {
 
     public double getDesconto(){
         
-        return 2.0;
+        return 0.10;
     }
 
     public double getSubTotal(){
@@ -41,7 +55,7 @@ public class Venda {
     }
 
     public double getImposto() {
-        return imposto;
+        return IMPOSTO;
     }
 
 

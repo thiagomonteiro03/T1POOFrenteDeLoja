@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Venda {
     
@@ -36,12 +35,9 @@ public class Venda {
         for(int i = 0; i<itens.size();i++){
             System.out.println(itens.get(i));
         }
+        System.out.println("Total: " + getSubTotal() + "\nDesconto: " + getDesconto() +
+        "\nImposto: " + getImposto() + "\nValor da Venda: " + getTotal());
         
-    }
-
-    @Override
-    public String toString() {
-        return "Venda [itens=" + itens + "]";
     }
 
     public boolean removeItem(int numero){
@@ -58,22 +54,33 @@ public class Venda {
     }
 
     public double getDesconto(){
-        
-        return 0.10;
+        double descontoItem = getSubTotal()*0.10;
+    return descontoItem;
     }
 
     public double getSubTotal(){
+        double subTotal = 0;
+        for(int i = 0; i<itens.size();i++){
+            subTotal = subTotal + itens.get(i).getValorItem();
+        }
         
-        return 2.0;
+        return subTotal;
     }
 
     public double getTotal(){
-        
-        return 2.0;
+        double total;
+        if(getSubTotal()>250){
+        total = getSubTotal()-getDesconto()+getImposto();
+        } else total = getSubTotal()+getImposto();
+        return total;
     }
 
     public double getImposto() {
-        return IMPOSTO;
+        double impostoCobrado;
+        if(getSubTotal()>250){
+         impostoCobrado = (getSubTotal()-getDesconto())*IMPOSTO;
+    } else impostoCobrado = getSubTotal()*IMPOSTO;
+        return impostoCobrado;
     }
 
 

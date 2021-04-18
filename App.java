@@ -21,7 +21,7 @@ public class App {
         //Validação de Estoque
         System.out.println("-----------------------------------------");
         Estoque estoque = new Estoque();
-        estoque.cadastraProduto(iphone, 10); //itemEstoque de iphone criado
+        estoque.cadastraProduto(iphone, 10);
         estoque.cadastraProduto(android, 8);
         System.out.println("Estoque - Quantidade disponível: " + estoque.getQuantidadeDisponivel(100));
         estoque.baixaEstoque(100, 2);

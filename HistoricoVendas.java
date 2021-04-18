@@ -4,10 +4,13 @@ public class HistoricoVendas {
 
     private ArrayList<Venda> vendas;
 
+    public HistoricoVendas() {
+        vendas = new ArrayList<Venda>();
+    }
 
     public boolean cadastraVenda(Venda venda){
-        if(vendas.contains(venda)){
-            System.out.println("Sua venda ja foi registrada.");
+        if(venda!=null){
+            vendas.add(venda);
         }
         else vendas.add(venda);
         
@@ -15,17 +18,19 @@ public class HistoricoVendas {
     }
 
     public Venda getVenda(int numero){
-        Venda venda = vendas.get(numero);
+        Venda venda = null;
+        for(int i = 0; i<vendas.size();i++){
+            if(vendas.get(i).getNumeroVenda()==numero) venda = vendas.get(i);
+        }
 
         return venda;
     }
 
     public ArrayList<Venda> getUltimasVendas(int n){
-        ArrayList<Venda> lista = null;
+        ArrayList<Venda> lista = new ArrayList<Venda>();
 
         for(int i=vendas.size();i>=n;i--){
             lista.add(vendas.get(i));
-
         }
 
         return lista;

@@ -5,13 +5,13 @@ public class App {
         System.out.println("-----------------------------------------");
         Produto iphone = new Produto(100, "iPhone 12", 8500);
         Produto android = new Produto(99, "Galaxy S20", 3000);
-        CatalogoProdutos catalogo = new CatalogoProdutos();
         System.out.println("Produto - " + iphone);
         System.out.println();
 
 
         //Validação de CatalogoProdutos
         System.out.println("-----------------------------------------");
+        CatalogoProdutos catalogo = new CatalogoProdutos();
         catalogo.cadastraProduto(iphone);
         catalogo.cadastraProduto(android);
         System.out.println("Catalogo - Produtos cadastrados: " + catalogo);
@@ -31,19 +31,20 @@ public class App {
         System.out.println("Estoque - Pegando produto android: " + estoque.getProduto(99));
         System.out.println();
 
-        //Validação de HistoricoVendas
-        System.out.println("-----------------------------------------");
-        System.out.println();
-
-        //Validação de Venda
+        //Validação de Venda e HistoricoVendas
         System.out.println("-----------------------------------------");
         Venda venda = new Venda();
+        HistoricoVendas histVendas = new HistoricoVendas();
         System.out.println("item inserido: " + venda.insereItem(99, 8,estoque));
         System.out.println("item inserido: " + venda.insereItem(99, 1,estoque));
         System.out.println("item inserido: " + venda.insereItem(100, 1,estoque));
         System.out.println("item removido: " + venda.removeItem(2));
         System.out.println("item removido errado: " + venda.removeItem(100));
         venda.imprimeRecibo();
+        venda.conclui();
+        histVendas.cadastraVenda(venda);
+
+
 
 
     }

@@ -3,12 +3,18 @@ import java.util.ArrayList;
 public class Venda {
     
     private ArrayList<ItemVenda> itens;
-    private int numeroItem = 0;
-    private int numeroRecibo = 0;
+    private int numeroItem = 0;  //adicionado numeroItem no construtor para numerar os itens.
+    private int numeroVenda = 0;  //adicionado numeroVenda no construtor para ter numeração no array de vendas
     private final double IMPOSTO = 0.25;
 
-    public Venda() {
+    //Adicionado get para o numeroVenda
+    public int getNumeroVenda() {
+        return numeroVenda;
+    }
+
+    public Venda(int numeroVenda) {
         itens = new ArrayList<ItemVenda>();
+        this.numeroVenda = numeroVenda;
     }
 
     //foi adicionado receber estoque no insereItem
@@ -30,8 +36,7 @@ public class Venda {
 
     public void imprimeRecibo(){
         //adicionamos uma variavel para o recibo
-        numeroRecibo++;
-        System.out.println("Recibo de venda número: " + numeroRecibo);
+        System.out.println("Recibo de venda número: " + numeroVenda);
         for(int i = 0; i<itens.size();i++){
             System.out.println(itens.get(i));
         }

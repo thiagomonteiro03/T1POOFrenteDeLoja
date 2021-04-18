@@ -29,7 +29,7 @@ public class HistoricoVendas {
     public ArrayList<Venda> getUltimasVendas(int n){
         ArrayList<Venda> lista = new ArrayList<Venda>();
 
-        for(int i=vendas.size();i>=n;i--){
+        for(int i=vendas.size()-1;i>=0;i--){
             lista.add(vendas.get(i));
         }
 

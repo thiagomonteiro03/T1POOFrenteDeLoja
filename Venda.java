@@ -54,7 +54,6 @@ public class Venda {
     }
 
     public boolean conclui(){
-        itens.clear();
         return true;
     }
 

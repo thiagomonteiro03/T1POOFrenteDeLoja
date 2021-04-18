@@ -3,11 +3,14 @@ public class ItemVenda {
     private Produto produto;
     private double precoUnitarioCobrado;
     private int quantidade;
-    
-    public ItemVenda(Produto produto, double precoUnitarioCobrado, int quantidade) {
+    private int numero;
+
+    //foi adicionado receber numero no construtor
+    public ItemVenda(Produto produto, double precoUnitarioCobrado, int quantidade, int numero) {
         this.produto = produto;
         this.precoUnitarioCobrado = precoUnitarioCobrado;
         this.quantidade = quantidade;
+        this.numero = numero;
     }
 
     public double getValorItem(){
@@ -17,6 +20,11 @@ public class ItemVenda {
 
     public Produto getProduto() {
         return produto;
+    }
+
+    //foi adicionado getNumero do numero recebido no construtor
+    public int getNumero() {
+        return numero;
     }
 
     public void setProduto(Produto produto) {
@@ -37,6 +45,12 @@ public class ItemVenda {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return "ItemVenda [numero=" + numero + ", precoUnitarioCobrado=" + precoUnitarioCobrado + ", produto=" + produto
+                + ", quantidade=" + quantidade + "]";
     }
     
 }

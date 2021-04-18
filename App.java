@@ -40,9 +40,10 @@ public class App {
         Venda venda = new Venda();
         System.out.println("item inserido: " + venda.insereItem(99, 8,estoque));
         System.out.println("item inserido: " + venda.insereItem(99, 1,estoque));
-        System.out.println("item removido: " + venda.removeItem(1));
+        System.out.println("item inserido: " + venda.insereItem(100, 1,estoque));
+        System.out.println("item removido: " + venda.removeItem(2));
         System.out.println("item removido errado: " + venda.removeItem(100));
-        System.out.println();
+        venda.imprimeRecibo();
 
 
     }

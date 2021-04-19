@@ -54,15 +54,13 @@ public class App {
         System.out.println("Item inserido na venda 3: " + venda3.insereItem(99, 3,estoque));
         System.out.println();
 
-        //ver com o professor a utilidade do metodo conclui.
-        venda.conclui();
-        venda2.conclui();
-        venda3.conclui();
-
         //cadastrando vendas.
         histVendas.cadastraVenda(venda);
+        System.out.println("Concluindo venda 1... " + venda.conclui(estoque));
         histVendas.cadastraVenda(venda2);
+        System.out.println("Concluindo venda 2... " + venda2.conclui(estoque));
         histVendas.cadastraVenda(venda3);
+        System.out.println("Concluindo venda 3... " + venda3.conclui(estoque));
 
         //Imprimindo venda 2 do historico de vendas.
         System.out.println("---------------Imprimindo Venda 2 através do getVendas()--------------- ");

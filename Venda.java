@@ -26,7 +26,6 @@ public class Venda {
         numeroItem++;
         ItemVenda item = new ItemVenda(p, p.getPrecoUnitario(), quantidade, numeroItem);
         itens.add(item);
-        estoque.baixaEstoque(codigo, quantidade);
 
         return true;
 
@@ -53,7 +52,10 @@ public class Venda {
         return false;
     }
 
-    public boolean conclui(){
+    public boolean conclui(Estoque estoque){
+        for(int i = 0; i<itens.size();i++){
+            estoque.baixaEstoque(itens.get(i).getProduto().getCodigo(), itens.get(i).getQuantidade());
+        }
         return true;
     }
 
